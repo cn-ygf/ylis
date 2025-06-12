@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Global>
+    <!--所有字体-->
+    <Font id="system_12" name="system" size="12" default="true"/>
+    <Font id="system_14" name="system" size="14"/>
+    <Font id="system_16" name="system" size="16"/>
+    <Font id="system_18" name="system" size="18"/>
+    <Font id="system_20" name="system" size="20"/>
+    <Font id="system_22" name="system" size="22"/>
+    <Font id="system_bold_12" name="system" size="12" bold="true"/>
+    <Font id="system_bold_14" name="system" size="14" bold="true"/>
+    <Font id="system_bold_16" name="system" size="16" bold="true"/>
+    <Font id="system_bold_18" name="system" size="18" bold="true"/>
+    <Font id="system_bold_20" name="system" size="20" bold="true"/>
+    <Font id="system_bold_22" name="system" size="22" bold="true"/>
+    <Font id="arial_12" name="arial" size="12"/>
+    <Font id="arial_14" name="arial" size="14"/>
+    <Font id="arial_16" name="arial" size="16"/>
+    <Font id="arial_18" name="arial" size="18"/>
+    <Font id="arial_20" name="arial" size="20"/>
+    <Font id="arial_22" name="arial" size="22"/>
+    <Font id="arial_bold_12" name="arial" size="12" bold="true"/>
+    <Font id="arial_bold_14" name="arial" size="14" bold="true"/>
+    <Font id="arial_bold_16" name="arial" size="16" bold="true"/>
+    <Font id="arial_bold_18" name="arial" size="18" bold="true"/>
+    <Font id="arial_bold_20" name="arial" size="20" bold="true"/>
+    <Font id="arial_bold_22" name="arial" size="22" bold="true"/>
+    <Font id="system_underline_12" name="system" size="12" underline="true"/>
+    <Font id="system_underline_14" name="system" size="14" underline="true"/>
+    <Font id="system_underline_16" name="system" size="16" underline="true"/>
+    <Font id="system_underline_18" name="system" size="18" underline="true"/>
+    <Font id="system_underline_20" name="system" size="20" underline="true"/>
+    <Font id="system_underline_22" name="system" size="22" underline="true"/>
+
+    <!--一些常规固定颜色-->
+    <TextColor name="white" value="#ffffffff"/>
+    <TextColor name="black" value="#ff000000"/>
+    <TextColor name="darkcolor" value="#ff333333"/>
+    <TextColor name="lightcolor" value="#ff888888"/>
+    <TextColor name="gray" value="#ff8e99a6"/>
+    <TextColor name="light_gray" value="#ffa8a8a8"/>
+    <TextColor name="dark_gray" value="#ff72797f"/>
+    <TextColor name="green" value="#ff00bb96"/>
+    <TextColor name="light_green" value="#ff21c7a6"/>
+    <TextColor name="blue" value="#ff006DD9"/>
+    <TextColor name="red" value="#ffC63535"/>
+
+    <!--文字色值，不带透明层-->
+    <TextColor name="textdefaultcolor" value="#ff333333"/>
+    <TextColor name="textdefaultdisablecolor" value="#ffa1aebc"/>
+
+    <!--窗口常用背景色-->
+    <TextColor name="bk_main_wnd_title" value="#ff238efa"/>
+    <TextColor name="bk_main_wnd_search" value="#ff1e7ad7"/>
+    <TextColor name="bk_wnd_darkcolor" value="#fff0f2f5"/>
+    <TextColor name="bk_wnd_lightcolor" value="#ffffffff"/>
+    <TextColor name="bk_menuitem_hovered" value="#ffe1e6eb"/>
+    <TextColor name="bk_menuitem_selected" value="#ffced4db"/>
+    <TextColor name="bk_listitem_hovered" value="#fff0f2f5"/>
+    <TextColor name="bk_listitem_selected" value="#ffe4e7eb"/>
+
+    <!--置顶项的背景颜色-->
+    <TextColor name="bk_topitem_normal" value="#ffffffe0"/>
+    <TextColor name="bk_topitem_hovered" value="#ffffffeb"/>
+    <TextColor name="bk_topitem_selected" value="#fffafacd"/>
+
+    <!--进度条专用-->
+    <TextColor name="bk_progress_bk" value="#ffe3ecf5"/>
+    <TextColor name="bk_progress_progress" value="#ff2aceae"/>
+
+    <!--背景色值，半透明-->
+    <TextColor name="transbkblack" value="#80000000"/>
+
+    <!--第一级分割线，较深-->
+    <TextColor name="splitline_level1" value="#ffd2d4d6"/>
+
+    <!--第二级分割线，较浅-->
+    <TextColor name="splitline_level2" value="#ffebedf0"/>
+
+    <!--滚动条-->
+    <Class name="vscrollbar" width="14" fadealpha="true" thumbnormalimage="file='../public/vscrollbar/thumb_normal.png'  corner='0,8,0,8'" thumbhotimage="file='../public/vscrollbar/thumb_hovered.png' corner='0,8,0,8'" bkhotimage="file='../public/vscrollbar/bk_hovered.png' corner='0,4,0,4'" showbutton1="false" showbutton2="false" />   
+    <Class name="hscrollbar" height="14" fadealpha="true" thumbnormalimage="file='../public/hscrollbar/thumb_normal.png' corner='8,0,8,0'" thumbhotimage="file='../public/hscrollbar/thumb_hovered.png' corner='8,0,8,0'" bkhotimage="file='../public/hscrollbar/bk_hovered.png' corner='4,0,4,0'" showbutton1="false" showbutton2="false"/>
+
+    <!--单选框-->
+    <Class name="option" selectednormalimage="../public/option/selected.png" selectedhotimage="../public/option/selectedhover.png" selectedpushedimage="../public/option/selectedhover.png"/>
+    <Class name="circle_option" normalimage="../public/option/circle_unselected.png" disabledimage="../public/option/circle_unselected_disabled.png"/>
+    <Class name="circle_option_2" height="18" textpadding="25,0,0,0" font="system_12" normaltextcolor="darkcolor" normalimage="file='../public/option/circle_unselected.png' dest='0,0,18,18'" selectednormalimage="file='../public/option/circle_selected.png' dest='0,0,18,18'"/>
+
+    <!--复选框-->
+    <Class name="checkbox_font12" height="16" textpadding="20,0,0,0" font="system_12" normaltextcolor="darkcolor" normalimage="file='../public/CheckBox/check_no.png' dest='0,0,16,16'" disabledimage="file='../public/CheckBox/check_no.png' dest='0,0,16,16' fade='80'" selectednormalimage="file='../public/CheckBox/check_yes.png' dest='0,0,16,16'" selecteddisabledimage="file='../public/CheckBox/check_yes.png' dest='0,0,16,16' fade='80'"/>
+    <Class name="checkbox_font14" height="20" textpadding="20,0,0,0" font="system_14" normaltextcolor="darkcolor" normalimage="file='../public/CheckBox/check_no.png' dest='0,2,16,18'" disabledimage="file='../public/CheckBox/check_no.png' dest='0,2,16,18' fade='80'" selectednormalimage="file='../public/CheckBox/check_yes.png' dest='0,2,16,18'" selecteddisabledimage="file='../public/CheckBox/check_yes.png' dest='0,2,16,18' fade='80'"/>
+    <Class name="checkbox_green" normalimage="file='../public/CheckBox/check_green_no.png'" disabledimage="file='../public/CheckBox/check_green_no.png' fade='80'" selectednormalimage="file='../public/CheckBox/check_green_yes.png'" selecteddisabledimage="file='../public/CheckBox/check_green_yes.png' fade='80'"/>
+
+    <!--进度条通用样式, 注意进度条的值使用`_value`属性-->
+    <Class name="progress_blue" valign="center" _value="0" bkimage="../public/progress/progress_blue_bg.png" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_blue_fg.png"/>
+    <Class name="slider_green" width="stretch" height="14" margin="4,0,0,0" valign="center" thumbsize="14,14" min="0" max="255" progressbarpadding="0,6,0,6" bkimage="file='../public/slider/slider_hor_bk.png' dest='0,6,1000,8'" progresscolor="bk_progress_progress" thumbnormalimage="../public/slider/slider_thumb.png"/>
+
+    <!--富文本控件通用样式-->
+    <Class name="simple" multiline="false" autohscroll="true" wantreturnmsg="true" wanttab="false" rich="false" normaltextcolor="darkcolor" disabledtextcolor="textdefaultdisablecolor"/>
+    <Class name="prompt" promptmode="true" promptcolor="light_gray"/>
+    <Class name="edit" hotimage="file='../public/edit/edit1.png' corner='10,10,10,10'" focusedimage="file='../public/edit/edit2.png' corner='10,10,10,10'"/>
+    <Class name="input" normalimage="file='../public/edit/edit0.png' corner='10,10,10,10'" hotimage="file='../public/edit/edit0.png' corner='10,10,10,10'" focusedimage="file='../public/edit/edit0.png' corner='10,10,10,10'" disabledimage="file='../public/edit/edit0.png' corner='10,10,10,10' fade='80'"/>
+
+
+	<!--自定义系统按钮样式 -->
+	<Class name="btn_min" hotcolor="btn_min_hover_color" pushedcolor="btn_min_pushed_color" width="34" height="26" normalimage="file='../assets/button/btn_min.png' dest='10,6,24,22'"/>
+	<Class name="btn_close" hotcolor="btn_close_hover_color" pushedcolor="btn_close_pushed_color" width="34" height="26" normalimage="file='../assets/button/btn_close.png' dest='8,8,21,21'" hotimage="file='../assets/button/btn_close_hover.png' dest='8,8,21,21'" fadehot="false"/>
+    <Class name="btn_master" disabledcolor="btn_master_disable_color" disabledtextcolor="btn_master_disable_textcolor" normaltextcolor="btn_master_text_color" font="yahei_16" nofocus="true" normalcolor="master_color" hotcolor="btn_master_hover_color" pushedcolor="btn_master_pushed_color"/>
+    <Class name="btn_plain" bordersize="1" bordercolor="btn_plain_border_color" disabledcolor="btn_plain_disable_color" disabledtextcolor="btn_plain_disable_textcolor" normaltextcolor="btn_plain_text_color" hottextcolor="white" font="yahei_14" nofocus="true" normalcolor="white" hotcolor="btn_plain_hover_color" pushedcolor="btn_plain_pushed_color"/>
+    <Class name="my_logo" width="80" height="80" normalimage="file='logo.png'" />
+    <Class name="my_title" font="yahei_18" />
+    <Class name="my_text" normaltextcolor="text_color" font="yahei_14" />
+    <Class name="my_subtitle" normaltextcolor="text_color" font="yahei_18" />
+    <Class name="my_text_link" normaltextcolor="text_link_color" font="yahei_14"/>
+    <Class name="my_big_text" normaltextcolor="black" font="yahei_18"/>
+    <Class name="my_progress" valign="center" _value="0" bkimage="../public/progress/progress_blue_bg.png" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_green_fg.png"/>
+    <Class name="edit_plaint" normalcolor="white" hotbordercolor="edit_plaint_hover_border_color" normalbordercolor="edit_plaint_border_color" bordersize="1,1,1,1"  />
+    <Class name="ck_master" normalimage="file='../assets/checkbox/check_no.png'" disabledimage="file='../assets/checkbox/check_no.png' fade='80'" selectednormalimage="file='../assets/checkbox/check_yes.png'" selecteddisabledimage="file='../assets/checkbox/check_yes.png' fade='80'"/>
+    <Class name="ck_ud" normaltextcolor="text_color" font="yahei_14" normalimage="file='../assets/checkbox/down.png'" selectednormalimage="file='../assets/checkbox/up.png'"/>
+
+    <!--颜色定义-->
+    <TextColor name="master_color" value="{{master_color}}"/>
+    <TextColor name="bk_color" value="{{bk_color}}"/>
+    <TextColor name="btn_close_hover_color" value="#fff45454"/>
+    <TextColor name="btn_close_pushed_color" value="#ffdc4848"/>
+    <TextColor name="btn_min_hover_color" value="#ffe3e3e3"/>
+    <TextColor name="btn_min_pushed_color" value="#ffcdcdcd"/>
+    <TextColor name="btn_hover_color" value="#20ffffff"/>
+    <TextColor name="btn_pushed_color" value="#20ffffff"/>
+    <TextColor name="btn_master_hover_color" value="{{btn_master_hover_color}}"/>
+    <TextColor name="btn_master_pushed_color" value="{{btn_master_pushed_color}}"/>
+    <TextColor name="btn_master_text_color" value="{{btn_master_text_color}}"/>
+    <TextColor name="btn_master_disable_color" value="{{btn_master_disable_color}}"/>
+    <TextColor name="btn_master_disable_textcolor" value="{{btn_master_disable_textcolor}}"/>
+    <TextColor name="text_color" value="{{text_color}}" />
+    <TextColor name="text_link_color" value="{{text_link_color}}" />
+    <TextColor name="btn_plain_hover_color" value="{{btn_plain_hover_color}}"/>
+    <TextColor name="btn_plain_pushed_color" value="{{btn_plain_pushed_color}}"/>
+    <TextColor name="btn_plain_text_color" value="{{btn_plain_text_color}}"/>
+    <TextColor name="btn_plain_disable_color" value="{{btn_plain_disable_color}}"/>
+    <TextColor name="btn_plain_disable_textcolor" value="{{btn_plain_disable_textcolor}}"/>
+    <TextColor name="btn_plain_border_color" value="{{btn_plain_border_color}}"/>
+    <TextColor name="edit_plaint_border_color" value="{{edit_plaint_border_color}}" />
+    <TextColor name="edit_plaint_hover_border_color" value="{{edit_plaint_hover_border_color}}" />
+
+    <!--字体-->
+    <Font id="yahei_12" name="微软雅黑" size="12"/>
+    <Font id="yahei_14" name="微软雅黑" size="14"/>
+    <Font id="yahei_16" name="微软雅黑" size="16"/>
+    <Font id="yahei_18" name="微软雅黑" size="18"/>
+    <Font id="yahei_bold_40" bold="true" name="微软雅黑" size="40"/>
+    <Font id="yahei_bold_18" bold="true" name="微软雅黑" size="18"/>
+    <Font id="yahei_bold_16" bold="true" name="微软雅黑" size="16"/>
+    <Font id="yahei_bold_24" bold="true" name="微软雅黑" size="24"/>
+
+</Global>

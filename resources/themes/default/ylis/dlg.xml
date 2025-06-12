@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="260,138" caption="0,0,0,26">
+    <VBox bkcolor="bk_color">
+        <Control height="16" />
+        <HBox height="30">
+            <Control />
+            <Label class="my_big_text" name="dlg_title" text="是否执行此操作？" />
+            <Control />
+        </HBox>
+        <HBox height="26" name="hb_form" visible="false">
+            <Control />
+            <RichEdit class="edit_plaint" width="206" name="edit_dlg_input" padding="5,5,5,5"
+                wantreturnmsg="false" margin="5,0,0,0" font="yahei_12" multiline="false"
+                vscrollbar="false" hscrollbar="false" rich="false" />
+            <Control />
+        </HBox>
+        <Control height="20" />
+        <HBox height="30">
+            <Control />
+            <Button class="btn_master" name="btn_ok" text="确定" width="100" height="30" />
+            <Control width="6" />
+            <Button class="btn_plain" name="btn_no" text="取消" width="100" height="30" />
+            <Control />
+        </HBox>
+    </VBox>
+</Window>

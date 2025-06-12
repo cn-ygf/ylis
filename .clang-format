@@ -1,0 +1,13 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Always
+
+BraceWrapping:
+  AfterControlStatement: false
+  BeforeElse: false
+  AfterFunction: false
+  AfterClass: false
+  AfterNamespace: false
+  BeforeCatch: false
+  IndentBraces: false

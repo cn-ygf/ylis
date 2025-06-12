@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--page全高度462-->
+<Window size="550,408" caption="0,0,0,26">
+  <VBox bkcolor="bk_color">
+    <!--标题栏-->
+    <HBox height="26">
+      <Control />
+      <!--系统按钮-->
+      <HBox width="68">
+        <Button class="btn_min" name="minbtn" />
+        <Button class="btn_close" name="closebtn" />
+      </HBox>
+    </HBox>
+    <!--logo-->
+    <Control  height="66"/>
+    <HBox padding="0,0,0,0" height="80">
+      <Control />
+      <Label class="my_logo" />
+      <Control />
+    </HBox>
+    <Control height="10" />
+    <HBox padding="0,0,0,0" height="30">
+      <Control />
+      <Label class="my_title" text="测试软件客户端"></Label>
+      <Control />
+    </HBox>
+    <!-- tabbox-->
+    <TabBox name="tb_main" selectedid="0">
+      <!--初始界面Page-->
+      <VBox>
+        <Control height="40" />
+        <HBox height="40">
+          <Control />
+          <Button class="btn_master" name="btn_install" enabled="false" text="安装" width="180" height="30"/>
+          <Control />
+        </HBox>
+        <Control height="5" />
+        <HBox height="20">
+          <Control />
+          <CheckBox class="ck_master" name="ck_accept" width="20" height="20" selected="false"/>
+          <Label class="my_text" margin="2,0,0,0" text="我已阅读并同意"/>
+          <Button class="my_text_link" name="btn_link" text="服务协议"/>
+          <Control />
+        </HBox>
+        <Control height="30" />
+        <HBox height="20">
+          <Control />
+          <Button class="my_text" name="btn_show_path_ex" text="安装路径" />
+          <CheckBox class="ck_ud" name="btn_show_path" margin="0,2,0,0" />
+          <Control />
+        </HBox>
+        <Control height="5" />
+        <!--安装路径高度为110-->
+        <VBox name="box_path" visible="false">
+          <HBox height="26">
+            <Control />
+            <Label text="安装路径" margin="0,2,0,0" font="yahei_14"/>
+            <RichEdit class="edit_plaint" name="rich_path" padding="5,5,0,0" wantreturnmsg="false" margin="5,0,0,0" width="280" font="yahei_12" text="C:\Program Files\MyTestSoft" multiline="false" vscrollbar="false" hscrollbar="false" rich="false" />
+            <Button class="btn_plain" name="btn_ll" margin="5,0,0,0" width="68" height="25" text="浏览" />
+            <Control />
+          </HBox>
+          <Control height="5" />
+          <HBox height="24">
+            <Control />
+            <Label class="my_text" text="安装所需空间：200MB" margin="0,2,0,0" font="yahei_14"/>
+            <Control />
+          </HBox>
+        </VBox>
+      </VBox>
+      <!--初始界面Page结束-->
+      <!--安装中...-->
+      <VBox>
+        <Control height="40" />
+        <HBox height="5">
+          <Control />
+          <VBox width="200"><Progress class="my_progress" name="progress" value="0" /></VBox>
+          <Control />
+        </HBox>
+        <Control height="15" />
+        <HBox>
+          <Control />
+          <Label class="my_subtitle" name="lb_progress" text="0%" />
+          <Control />
+        </HBox>
+      </VBox>
+      <!--安装中结束...-->
+      <!--安装完成-->
+      <VBox>
+        <Control height="40" />
+        <HBox height="40">
+          <Control />
+          <Button class="btn_master" name="btn_run" text="开始使用" width="180" height="30"/>
+          <Control />
+        </HBox>
+        <Control height="5" />
+        <HBox height="20">
+          <Control />
+          <CheckBox class="ck_master" name="ck_autorun" width="20" height="20" selected="false"/>
+          <Label class="my_text" margin="2,0,0,0" text="开机时自动启动"/>
+          <Control />
+        </HBox>
+      </VBox>
+      <!--安装结束-->
+    </TabBox>
+  </VBox>
+</Window>
