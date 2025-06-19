@@ -83,7 +83,8 @@ bool writer_install_data(const std::string &pe_file,
 	data_in.read(data_content.data(), data_size);
 
 	unsigned char md5[16];
-	if (!utils::CalculateFileMD5(install_data_file, md5)) {
+    std::wstring install_data_file_w = utils::LocalToUTF16(install_data_file);
+	if (!utils::CalculateFileMD5(install_data_file_w, md5)) {
 		err = "Failed to calculate MD5 from install_data_file.";
 		return false;
 	}

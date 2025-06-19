@@ -20,7 +20,8 @@ int lua_md5(lua_State *L) {
 
 int lua_md5_file(lua_State *L) {
 	std::string filename = luaL_checkstring(L, 1);
-	std::string hex = utils::CalculateFileMD5(filename);
+	std::wstring filename_w = utils::UTF8ToUTF16(filename);
+	std::string hex = utils::CalculateFileMD5(filename_w);
     lua_pushstring(L, hex.c_str());
 	return 1;
 }

@@ -6,8 +6,8 @@
 namespace utils {
 std::string CalculateSHA256(const std::string &input);
 std::string CalculateMD5(const uint8_t *data, unsigned long size);
-std::string CalculateFileMD5(const std::string &filename);
-bool CalculateFileMD5(const std::string &filename, unsigned char digest[16]);
+std::string CalculateFileMD5(const std::wstring &filename);
+bool CalculateFileMD5(const std::wstring &filename, unsigned char digest[16]);
 std::string MakeAbsolutePath(const std::string &path);
 std::string MakeAbsolutePath(const std::string &path,
 							 const std::string &base_path);

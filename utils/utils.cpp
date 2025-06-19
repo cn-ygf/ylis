@@ -30,7 +30,7 @@
 
 namespace utils {
 
-std::string CalculateFileMD5(const std::string &filename) {
+std::string CalculateFileMD5(const std::wstring &filename) {
 
 	std::ifstream file(filename, std::ios::in | std::ios::binary);
 	if (!file)
@@ -57,7 +57,7 @@ std::string CalculateFileMD5(const std::string &filename) {
 	return oss.str();
 }
 
-bool CalculateFileMD5(const std::string &filename, unsigned char digest[16]) {
+bool CalculateFileMD5(const std::wstring &filename, unsigned char digest[16]) {
 
 	std::ifstream file(filename, std::ios::in | std::ios::binary);
 	if (!file)
