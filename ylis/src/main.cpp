@@ -8,7 +8,7 @@
 #include <fstream>
 #include <hv/base64.h>
 #include <hv/hlog.h>
-#include <hv/json.hpp>
+#include <nlohmann/json.hpp>
 #include <iostream>
 #include <utils/utils.h>
 #include <utils/utils_res.h>
@@ -53,6 +53,7 @@ void signal_handler(int signal) {
 }
 
 void usage() {
+	std::cout << "ylis 0.0.2\n";
 	std::cout << "使用方法:\n";
 	std::cout << "\tylis.exe <LUA脚本文件>\n";
 }

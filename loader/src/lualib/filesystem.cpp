@@ -93,3 +93,10 @@ int lua_exist(lua_State *L) {
 	lua_pushboolean(L, fs::exists(src_w));
 	return 1;
 }
+
+int lua_isdir(lua_State *L) {
+	const char *src = luaL_checkstring(L, 1);
+	std::wstring src_w = utils::UTF8ToUTF16(src);
+	lua_pushboolean(L, fs::is_directory(src_w));
+	return 1;
+}

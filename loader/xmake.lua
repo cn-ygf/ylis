@@ -5,13 +5,19 @@ add_requires("lua", {configs = {
     vs_runtime = vs_runtime_cfg
 }, debug = is_mode("debug")})
 
-add_requires("libhv", {configs = {
-    shared = false,
-    ssl = true,
-    http = true,
-    websocket = true,
-    vs_runtime = vs_runtime_cfg
-}, debug = is_mode("debug")})
+add_requires("libhv", {
+    configs = {
+        shared = false,
+        ssl = true,
+        protocol = true,
+        http = true,
+        http_server = true,
+        http_client = true,
+        websocket = true,
+        runtimes = vs_runtime_cfg
+    },
+    debug = is_mode("debug")
+})
 
 add_requires("minizip", {configs = {
     shared = false,
@@ -34,7 +40,7 @@ target("loader")
     add_files("src/lualib/*.cpp", {header = false})
     add_files("../utils/utils.cpp", {header = false})
     add_files("../utils/utils_res.cpp", {header = false})
-    add_files("src/scripts/*.lua")
+    add_files("src/scripts/lualib.lua")
     add_ldflags("/SUBSYSTEM:WINDOWS")
     add_cxxflags("/utf-8", {force = true})
     add_deps("base", "duilib")

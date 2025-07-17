@@ -72,5 +72,6 @@ int lua_get_physical_ip_address_list(lua_State *L);
 int lua_get_physical_mac_address_list(lua_State *L);
 int lua_check_mutex(lua_State *L);
 int lua_exit_process(lua_State *L);
+int lua_isdir(lua_State *L);
 
 void register_functions(lua_State* L);

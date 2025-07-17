@@ -10,13 +10,19 @@ add_requires("fmt", {configs = {
     vs_runtime = vs_runtime_cfg
 }, debug = is_mode("debug")})
 
-add_requires("libhv", {configs = {
-    shared = false,
-    ssl = true,
-    http = true,
-    websocket = true,
-    vs_runtime = vs_runtime_cfg
-}, debug = is_mode("debug")})
+add_requires("libhv", {
+    configs = {
+        shared = false,
+        ssl = true,
+        protocol = true,
+        http = true,
+        http_server = true,
+        http_client = true,
+        websocket = true,
+        runtimes = vs_runtime_cfg
+    },
+    debug = is_mode("debug")
+})
 
 add_requires("minizip", {configs = {
     shared = false,

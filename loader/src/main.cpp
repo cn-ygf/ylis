@@ -8,7 +8,7 @@
 #include <filesystem>
 #include <hv/base64.h>
 #include <hv/hlog.h>
-#include <hv/json.hpp>
+#include <nlohmann/json.hpp>
 #include <utils/utils.h>
 
 #define IDR_THEME 1001
@@ -198,12 +198,13 @@ void MainThread::Cleanup() {
 }
 
 bool MainThread::init_lua(std::string &err) {
+	std::string lualib_str = hv::Base64Decode(g_lualib_data);
 	L = luaL_newstate();
 	luaL_openlibs(L);
 	// 注册cpp函数
 	register_functions(L);
 	// 注册lua函数
-	if (luaL_dostring(L, g_lualib_data) != LUA_OK) {
+	if (luaL_dostring(L, lualib_str.c_str()) != LUA_OK) {
 		err = nbase::StringPrintf("registry lualib failed: %s",
 								  lua_tostring(L, -1));
 		lua_pop(L, 1);

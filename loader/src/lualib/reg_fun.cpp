@@ -14,6 +14,7 @@ void register_functions(lua_State *L) {
 	lua_register(L, "rm", lua_rm);
 	lua_register(L, "mkdir", lua_mkdir);
 	lua_register(L, "exist", lua_exist);
+	lua_register(L, "isdir", lua_isdir);
 	lua_register(L, "execn", lua_execn);
 	lua_register(L, "get_local_app_data_dir", lua_get_local_app_data_dir);
 	lua_register(L, "get_roaming_app_data_dir", lua_get_roaming_app_data_dir);
