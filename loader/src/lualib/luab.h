@@ -33,6 +33,7 @@ int lua_get_roaming_app_data_dir(lua_State *L);
 int lua_exec(lua_State* L);
 int lua_execn(lua_State* L);
 int lua_create_process(lua_State *L);
+int lua_create_process_wait(lua_State *L);
 int lua_get_os_version(lua_State* L);
 int lua_is_admin(lua_State* L);
 int lua_get_home_dir(lua_State* L);

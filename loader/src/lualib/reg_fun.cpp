@@ -20,6 +20,7 @@ void register_functions(lua_State *L) {
 	lua_register(L, "get_roaming_app_data_dir", lua_get_roaming_app_data_dir);
 	lua_register(L, "exec", lua_exec);
 	lua_register(L, "create_process", lua_create_process);
+	lua_register(L, "create_process_wait", lua_create_process_wait);
 	lua_register(L, "is_admin", lua_is_admin);
 	lua_register(L, "get_home_dir", lua_get_home_dir);
 	lua_register(L, "get_os_version", lua_get_os_version);

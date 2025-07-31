@@ -26,3 +26,4 @@ release/
 build/
 .build/
 example/debugview/
+compile_commands.json

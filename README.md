@@ -454,11 +454,13 @@ exist(path)
 execn(cmd)
 exec(cmd)
 create_process(cmd)
+create_process_wait(cmd)
 ```
 
 - `execn`: 执行命令，会等待进程结束再返回，无返回值，如果出现错误会在日志中输出标准输出和标准错误  
 - `exec`: 执行命令，会等待进程结束再返回，返回输出结果，如果出现错误会在日志中输出标准输出和标准错，会导出安装包跳到安装失败界面
 - `create_process`: 创建进程，返回 `true/false`，不会等待进程结束
+- `create_process_wait`: 创建进程，返回 `true/false`, 会等待进程结束
 
 示例
 ```lua

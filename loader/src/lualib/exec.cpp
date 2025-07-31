@@ -38,3 +38,10 @@ int lua_create_process(lua_State *L) {
     lua_pushboolean(L, b);
     return 1;
 }
+
+int lua_create_process_wait(lua_State *L) {
+    const char* cmd = luaL_checkstring(L, 1);
+    bool b = utils::create_process_wait(cmd);
+    lua_pushboolean(L, b);
+    return 1;
+}

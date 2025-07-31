@@ -22,6 +22,7 @@ std::string UTF16ToUTF8(const std::wstring &utf16);
 bool exec_command(const std::string &command, std::string &stdOut,
 				  std::string &stdErr);
 bool create_process(const std::string &command);
+bool create_process_wait(const std::string &command);
 bool IsRunningAsSystem();
 HKEY get_hkey(const std::string &str);
 BOOL DeleteRegistryValue(HKEY hKeyParent, LPCTSTR lpszKeyName,

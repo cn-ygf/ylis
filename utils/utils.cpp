@@ -325,6 +325,26 @@ bool create_process(const std::string &command) {
 	return true;
 }
 
+bool create_process_wait(const std::string &command) {
+	std::wstring command_w = nbase::UTF8ToUTF16(command);
+
+	// 设置启动信息
+	STARTUPINFO si = {sizeof(STARTUPINFO)};
+	PROCESS_INFORMATION pi = {0};
+
+	// 启动进程
+	if (!CreateProcess(NULL, const_cast<LPWSTR>(command_w.c_str()), NULL, NULL,
+					   FALSE, 0, NULL, NULL, &si, &pi)) {
+		return false;
+	}
+	// 关闭句柄
+	CloseHandle(pi.hThread);
+	// 等待进程结束
+	WaitForSingleObject(pi.hProcess, INFINITE);
+	CloseHandle(pi.hProcess);
+	return true;
+}
+
 bool exec_command(const std::string &command, std::string &stdOut,
 				  std::string &stdErr) {
 	stdOut.clear();
@@ -645,12 +665,12 @@ HKEY get_hkey(const std::string &str) {
 	return a;
 }
 
-bool create_service(
-	const std::string &name, const std::string &display_name,
-	const std::string &description, const std::string &bin_path,
-	int typ,		// 0 = Win32, 1 = driver
-	int start_mode, // 0 = auto, 1 = delayed auto, 2 = manual, 3 = disabled 4 = boot
-	std::string &err) {
+bool create_service(const std::string &name, const std::string &display_name,
+					const std::string &description, const std::string &bin_path,
+					int typ,		// 0 = Win32, 1 = driver
+					int start_mode, // 0 = auto, 1 = delayed auto, 2 = manual, 3
+									// = disabled 4 = boot
+					std::string &err) {
 	SC_HANDLE scm = OpenSCManagerW(nullptr, nullptr, SC_MANAGER_CREATE_SERVICE);
 	if (!scm) {
 		DWORD code = GetLastError();
