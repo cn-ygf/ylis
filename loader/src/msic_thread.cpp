@@ -210,8 +210,12 @@ void MsicThread::InstallTask() {
 		return;
 	}
 	// 写入pe文件头部到安装目录文件名为uninstall.exe
-	if (!writer_uninstall_file(pe_file, &header, installdir, err)) {
-		LOGE("%s", err.c_str());
+	if (ptr->state_int.count("uninstall") > 0) {
+		if (ptr->state_int["uninstall"] == 1) {
+			if (!writer_uninstall_file(pe_file, &header, installdir, err)) {
+				LOGE("%s", err.c_str());
+			}
+		}
 	}
 
 	// 运行install()

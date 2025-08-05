@@ -1,5 +1,6 @@
 #pragma once
 #include "lualib/luab.h"
+#include <windows.h>
 class Window;
 class MsicThread : public nbase::FrameworkThread {
   public:

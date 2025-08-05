@@ -53,7 +53,7 @@ void signal_handler(int signal) {
 }
 
 void usage() {
-	std::cout << "ylis 0.0.2\n";
+	std::cout << "ylis 0.0.3\n";
 	std::cout << "使用方法:\n";
 	std::cout << "\tylis.exe <LUA脚本文件>\n";
 }
