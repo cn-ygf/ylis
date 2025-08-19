@@ -6,7 +6,7 @@
 namespace ui
 {
 /** @class OnScreenKeyboardManager
-  * @brief D¨¦?a?¨¹?¨¬1¨¹¨¤¨ª¨¤¨¤
+  * @brief DÂ¨Â¦?a?Â¨Â¹?Â¨Â¬1Â¨Â¹Â¨Â¤Â¨ÂªÂ¨Â¤Â¨Â¤
   * @copyright (c) 2018, NetEase Inc. All rights reserved
   * @author Redrain
   * @date 2018/08/28
@@ -17,14 +17,14 @@ public:
 	static OnScreenKeyboardManager* GetInstance();
 
 	/**
-	  * D¨¦?a?¨¹?¨¬¨º?¡¤??y?¨²??¨º?
+	  * DÂ¨Â¦?a?Â¨Â¹?Â¨Â¬Â¨Âº?Â¡Â¤??y?Â¨Â²??Â¨Âº?
 	  * @return bool
 	  */
 	bool IsVisible();
 
 	/**
-	  * ??¨º?D¨¦?a?¨¹?¨¬
-	  * @param[in] show ¨º?¡¤???¨º?
+	  * ??Â¨Âº?DÂ¨Â¦?a?Â¨Â¹?Â¨Â¬
+	  * @param[in] show Â¨Âº?Â¡Â¤???Â¨Âº?
 	  * @return void
 	  */
 	void ShowOSK(bool show);

@@ -102,7 +102,7 @@ void MainThread::Init() {
 	// 如需修改请指定 Startup 最后两个参数
 	ui::GlobalManager::OpenResZip(MAKEINTRESOURCE(IDR_THEME), L"THEME", "");
 	ui::GlobalManager::Startup(L"resources\\", ui::CreateControlCallback(),
-							   false);
+							   true);
 	/*std::wstring theme_dir = L"E:\\Code\\ylis\\";
 	ui::GlobalManager::Startup(theme_dir + L"resources\\",
 							   ui::CreateControlCallback(), false);*/
@@ -115,7 +115,7 @@ void MainThread::Init() {
 	ui::GlobalManager::OpenResZip(MAKEINTRESOURCE(IDR_THEME), L"THEME", "");
 	// ui::GlobalManager::OpenResZip(L"resources.zip", "");
 	ui::GlobalManager::Startup(L"resources\\", ui::CreateControlCallback(),
-							   false);
+							   true);
 #endif
 
 	std::string err;

@@ -103,8 +103,8 @@
 
 
 	<!--自定义系统按钮样式 -->
-	<Class name="btn_min" hotcolor="btn_min_hover_color" pushedcolor="btn_min_pushed_color" width="34" height="26" normalimage="file='../assets/button/btn_min.png' dest='10,6,24,22'"/>
-	<Class name="btn_close" hotcolor="btn_close_hover_color" pushedcolor="btn_close_pushed_color" width="34" height="26" normalimage="file='../assets/button/btn_close.png' dest='8,8,21,21'" hotimage="file='../assets/button/btn_close_hover.png' dest='8,8,21,21'" fadehot="false"/>
+	<Class name="btn_min" hotcolor="btn_min_hover_color" pushedcolor="btn_min_pushed_color" width="34" height="26" normalimage="file='../assets/svg/btn_min.svg' dest='10,6,24,22'"/>
+	<Class name="btn_close" hotcolor="btn_close_hover_color" pushedcolor="btn_close_pushed_color" width="34" height="26" normalimage="file='../assets/svg/btn_close.svg' dest='8,8,21,21'" hotimage="file='../assets/svg/btn_close_hover.svg' dest='8,8,21,21'" fadehot="false"/>
     <Class name="btn_master" disabledcolor="btn_master_disable_color" disabledtextcolor="btn_master_disable_textcolor" normaltextcolor="btn_master_text_color" font="yahei_16" nofocus="true" normalcolor="master_color" hotcolor="btn_master_hover_color" pushedcolor="btn_master_pushed_color"/>
     <Class name="btn_plain" bordersize="1" bordercolor="btn_plain_border_color" disabledcolor="btn_plain_disable_color" disabledtextcolor="btn_plain_disable_textcolor" normaltextcolor="btn_plain_text_color" hottextcolor="white" font="yahei_14" nofocus="true" normalcolor="white" hotcolor="btn_plain_hover_color" pushedcolor="btn_plain_pushed_color"/>
     <Class name="my_logo" width="80" height="80" normalimage="file='logo.png'" />
@@ -113,11 +113,11 @@
     <Class name="my_subtitle" normaltextcolor="text_color" font="yahei_18" />
     <Class name="my_text_link" normaltextcolor="text_link_color" font="yahei_14"/>
     <Class name="my_big_text" normaltextcolor="black" font="yahei_18"/>
-    <Class name="my_progress" valign="center" _value="0" bkimage="../public/progress/progress_blue_bg.png" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_green_fg.png"/>
+    <Class name="my_progress" valign="center" _value="0" bkimage="../assets/svg/progress_bg.svg" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../assets/svg/progress_blue.svg"/>
     <Class name="edit_plaint" normalcolor="white" hotbordercolor="edit_plaint_hover_border_color" normalbordercolor="edit_plaint_border_color" bordersize="1,1,1,1"  />
-    <Class name="ck_master" normalimage="file='../assets/checkbox/check_no.png'" disabledimage="file='../assets/checkbox/check_no.png' fade='80'" selectednormalimage="file='../assets/checkbox/check_yes.png'" selecteddisabledimage="file='../assets/checkbox/check_yes.png' fade='80'"/>
-    <Class name="ck_ud" normaltextcolor="text_color" font="yahei_14" normalimage="file='../assets/checkbox/down.png'" selectednormalimage="file='../assets/checkbox/up.png'"/>
-
+    <Class name="ck_master" normalimage="file='../assets/svg/check_no.svg'" disabledimage="file='../assets/svg/check_no.svg' fade='80'" selectednormalimage="file='../assets/svg/check_yes.svg'" selecteddisabledimage="file='../assets/svg/check_yes.svg' fade='80'"/>
+    <Class name="ck_ud" normaltextcolor="text_color" width="16" height="16" normalimage="file='../assets/svg/down.svg'" selectednormalimage="file='../assets/svg/up.svg'"/>
+    
     <!--颜色定义-->
     <TextColor name="master_color" value="{{master_color}}"/>
     <TextColor name="bk_color" value="{{bk_color}}"/>

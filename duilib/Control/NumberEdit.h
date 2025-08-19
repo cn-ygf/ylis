@@ -16,35 +16,35 @@ namespace ui
 		NumberEdit& operator=(const NumberEdit& r) = delete;
 
 		/**
-		 * @brief ÅĞ¶ÏÊÇ·ñ½öÖ§³ÖÕûÊı
-		 * @return ·µ»Ø true ±íÊ¾ÊÇ
+		 * @brief åˆ¤æ–­æ˜¯å¦ä»…æ”¯æŒæ•´æ•°
+		 * @return è¿”å› true è¡¨ç¤ºæ˜¯
 		 */
 		bool IsIntOnly();
 
 		/**
-		 * @brief ÉèÖÃÊÇ·ñ½öÖ§³ÖÕûÊı
-		 * @param[in] bIntOnly Îª true ÔòÖ»ÄÜÊäÈëÕûÊı£¬false ÎªÊµÊı
-		 * @return ÎŞ
+		 * @brief è®¾ç½®æ˜¯å¦ä»…æ”¯æŒæ•´æ•°
+		 * @param[in] bIntOnly ä¸º true åˆ™åªèƒ½è¾“å…¥æ•´æ•°ï¼Œfalse ä¸ºå®æ•°
+		 * @return æ— 
 		 */
 		void SetIntOnly(bool bIntOnly = false);
 
 		/**
-		 * @brief ÅĞ¶ÏÊÇ·ñÔÊĞí¸ºÊı
-		 * @return ·µ»Ø true ±íÊ¾ÔÊĞí
+		 * @brief åˆ¤æ–­æ˜¯å¦å…è®¸è´Ÿæ•°
+		 * @return è¿”å› true è¡¨ç¤ºå…è®¸
 		 */
 		bool IsAllowNegative();
 
 		/**
-		 * @brief ÉèÖÃÊÇ·ñÔÊĞí¸ºÊı
-		 * @param[in] bIntOnly Îª true ÔòÔÊĞíÊäÈë¸ºÊı
-		 * @return ÎŞ
+		 * @brief è®¾ç½®æ˜¯å¦å…è®¸è´Ÿæ•°
+		 * @param[in] bIntOnly ä¸º true åˆ™å…è®¸è¾“å…¥è´Ÿæ•°
+		 * @return æ— 
 		 */
 		void SetAllowNegative(bool bAllowNegative = false);
 
 		/**
- 		 * @brief ÉèÖÃ¿Ø¼şµÄÎÄ±¾
- 		 * @param[in] strText ÒªÉèÖÃµÄÎÄ±¾ÄÚÈİ
- 		 * @return ÎŞ
+ 		 * @brief è®¾ç½®æ§ä»¶çš„æ–‡æœ¬
+ 		 * @param[in] strText è¦è®¾ç½®çš„æ–‡æœ¬å†…å®¹
+ 		 * @return æ— 
  		 */
 		virtual void SetText(const std::wstring& strText) override;
 		virtual void OnChar(EventArgs& event) override;
@@ -53,8 +53,8 @@ namespace ui
 		virtual void SetAttribute(const std::wstring& pstrName, const std::wstring& pstrValue) override;
 
 	protected:
-		bool m_bIntOnly; //½öÖ§³ÖÕûÊı Ä¬ÈÏ·ñ
-		bool m_bAllowNegative; //ÔÊĞí¸ºÊı Ä¬ÈÏ·ñ
+		bool m_bIntOnly; //ä»…æ”¯æŒæ•´æ•° é»˜è®¤å¦
+		bool m_bAllowNegative; //å…è®¸è´Ÿæ•° é»˜è®¤å¦
 
 	private:
 		std::wstring _ToNumberStr(std::wstring str);

@@ -477,7 +477,7 @@ void RenderContext_GdiPlus::DrawRoundRect(const UiRect& rc, const CSize& roundSi
 	graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
 	Gdiplus::Pen pen(Gdiplus::Color(dwPenColor), (Gdiplus::REAL)nSize);
 
-	// ²Ã¼ôÇøÓò²»ÄÜ×÷»­£¬µ¼ÖÂ±ß¿òÓÐÊ±²»È«£¬ÍùÀïÊÕËõÒ»¸öÏñËØ
+	// è£å‰ªåŒºåŸŸä¸èƒ½ä½œç”»ï¼Œå¯¼è‡´è¾¹æ¡†æœ‰æ—¶ä¸å…¨ï¼Œå¾€é‡Œæ”¶ç¼©ä¸€ä¸ªåƒç´ 
 	// UiRect rcInflate = rc;
 	// rcInflate.Inflate({ -1, -1, -1, -1 });
 
@@ -545,7 +545,7 @@ void RenderContext_GdiPlus::DrawText(const UiRect& rc, const std::wstring& strTe
 	}
 	else if ((uStyle & DT_VCENTER) != 0) {
 		TFontInfo* fontInfo = GlobalManager::GetTFontInfo(strFontId);
-		if (fontInfo->sFontName == L"ÐÂËÎÌå") {
+		if (fontInfo->sFontName == L"æ–°å®‹ä½“") {
 			if (rcPaint.Height >= fontInfo->iSize + 2) {
 				rcPaint.Offset(0, 1);
 			}
@@ -612,7 +612,7 @@ ui::UiRect RenderContext_GdiPlus::MeasureText(const std::wstring& strText, const
 		Gdiplus::REAL height = 0;
 		if ((uStyle & DT_SINGLELINE) != 0) {
 			Gdiplus::RectF rcEmpty((Gdiplus::REAL)0, (Gdiplus::REAL)0, (Gdiplus::REAL)0, (Gdiplus::REAL)0);
-			graphics.MeasureString(L"²âÊÔ", 2, &font, rcEmpty, &stringFormat, &bounds);
+			graphics.MeasureString(L"æµ‹è¯•", 2, &font, rcEmpty, &stringFormat, &bounds);
 			height = bounds.Height;
 		}
 		Gdiplus::RectF rcText((Gdiplus::REAL)0, (Gdiplus::REAL)0, (Gdiplus::REAL)width, height);

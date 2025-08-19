@@ -18,6 +18,8 @@ public:
 	bool IsAlpha() { return m_bAlphaChannel; }
 	bool IsCached()	{ return m_bCached; }
 	void SetCached(bool bCached) { m_bCached = bCached; }
+	void SetSvg(bool svg) { m_bSvg = svg; }
+	bool IsSvg() { return m_bSvg; }
 
 	void SetPropertyItem(Gdiplus::PropertyItem* pPropertyItem);
 
@@ -25,7 +27,7 @@ public:
 	HBITMAP GetHBitmap(int nIndex);
 	int GetFrameCount();
 	bool IsGif();
-	int GetInterval(int nIndex); //����Ϊ��λ 
+	int GetInterval(int nIndex);
 	 
 	static std::unique_ptr<ImageInfo> LoadImage(const std::wstring& strImageFullPath);
 	static std::unique_ptr<ImageInfo> LoadImage(HGLOBAL hGlobal, const std::wstring& imageFullPath);
@@ -41,6 +43,7 @@ public:
 private:
 	bool m_bAlphaChannel;
 	bool m_bCached;
+	bool m_bSvg = false;
 	std::unique_ptr<Gdiplus::PropertyItem> m_propertyItem;
 	std::vector<HBITMAP> m_vecBitmap;
 };

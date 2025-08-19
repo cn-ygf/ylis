@@ -11,15 +11,15 @@ class UILIB_API ButtonTemplate : public LabelTemplate<InheritType>
 public:
 	ButtonTemplate();
 
-	/// ÖØÐ´¸¸Àà·½·¨£¬Ìá¹©¸öÐÔ»¯¹¦ÄÜ£¬Çë²Î¿¼¸¸ÀàÉùÃ÷
+	/// é‡å†™çˆ¶ç±»æ–¹æ³•ï¼Œæä¾›ä¸ªæ€§åŒ–åŠŸèƒ½ï¼Œè¯·å‚è€ƒçˆ¶ç±»å£°æ˜Ž
 	virtual void Activate() override;
 	virtual void HandleMessage(EventArgs& event) override;
 	virtual UINT GetControlFlags() const override;
 
 	/**
-	 * @brief °ó¶¨Êó±êµã»÷´¦Àíº¯Êý
-	 * @param[in] callback Òª°ó¶¨µÄ»Øµ÷º¯Êý
-	 * @return ÎÞ
+	 * @brief ç»‘å®šé¼ æ ‡ç‚¹å‡»å¤„ç†å‡½æ•°
+	 * @param[in] callback è¦ç»‘å®šçš„å›žè°ƒå‡½æ•°
+	 * @return æ— 
 	 */
 	void AttachClick(const EventCallback& callback)	{ this->OnEvent[kEventClick] += callback;	}
 };

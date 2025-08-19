@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "base/thread/thread_manager.h"
 
 // These constants are for backward compatibility. They are the 
@@ -59,11 +59,11 @@ namespace ui {
 			return;
 		}
 
-		if (event.wParam < '0' || event.wParam > '9') //ÊäÈëµÄÊÇ·ÇÊı×Ö
+		if (event.wParam < '0' || event.wParam > '9') //è¾“å…¥çš„æ˜¯éæ•°å­—
 		{
-			if (event.wParam == 46) //ÊäÈëµÄÊÇĞ¡Êıµã
+			if (event.wParam == 46) //è¾“å…¥çš„æ˜¯å°æ•°ç‚¹
 			{
-				if (m_bIntOnly) //Èç¹û½öÖ§³ÖÕûÊı
+				if (m_bIntOnly) //å¦‚æœä»…æ”¯æŒæ•´æ•°
 				{
 					return;
 				}
@@ -83,9 +83,9 @@ namespace ui {
 					}
 				}
 			}
-			else if (event.wParam == 45) //ÊäÈëµÄÊÇ¼õºÅ
+			else if (event.wParam == 45) //è¾“å…¥çš„æ˜¯å‡å·
 			{
-				if (!m_bAllowNegative) //Èç¹û²»ÔÊĞí¸ºÊı
+				if (!m_bAllowNegative) //å¦‚æœä¸å…è®¸è´Ÿæ•°
 				{
 					return;
 				}
@@ -128,8 +128,8 @@ namespace ui {
 			if (!strClipText.empty()) 
 			{
 				std::wstring strNum = _ToNumberStr(strClipText);
-				SetClipBoardText(strNum); //ĞŞ¸Ä¼ôÇĞ°åÄÚÈİÎª´¿Êı×Ö
-				nbase::ThreadManager::PostTask([strClipText]() { SetClipBoardText(strClipText); }); //Õ³ÌùÍêºóÓÖ°Ñ¼ôÇĞ°åÄÚÈİ¸Ä»ØÀ´
+				SetClipBoardText(strNum); //ä¿®æ”¹å‰ªåˆ‡æ¿å†…å®¹ä¸ºçº¯æ•°å­—
+				nbase::ThreadManager::PostTask([strClipText]() { SetClipBoardText(strClipText); }); //ç²˜è´´å®ŒååˆæŠŠå‰ªåˆ‡æ¿å†…å®¹æ”¹å›æ¥
 			}
 		}
 
@@ -156,15 +156,15 @@ namespace ui {
 			}
 			else if ((*it) == L'.')
 			{
-				if (!m_bIntOnly) //Èç¹ûÖ§³ÖÊµÊı
+				if (!m_bIntOnly) //å¦‚æœæ”¯æŒå®æ•°
 				{
-					if ((strNum.length() == 0) || ((strNum.length() == 1) && (strNum.find('-') == 0))) //Èç¹ûÊÇÊäÈëÄÚÈİµÄÊ×Î»£¬Ç°Ãæ¼Ó0
+					if ((strNum.length() == 0) || ((strNum.length() == 1) && (strNum.find('-') == 0))) //å¦‚æœæ˜¯è¾“å…¥å†…å®¹çš„é¦–ä½ï¼Œå‰é¢åŠ 0
 					{
 						strNum += L"0.";
 						//strNum.push_back((L'0'));
 						//strNum.push_back((*it));
 					}
-					else if (strNum.find('.') == -1) //Èç¹ûÉĞÎ´ÓĞĞ¡Êıµã£¬ÔÊĞí´Ë´ÎÊäÈë
+					else if (strNum.find('.') == -1) //å¦‚æœå°šæœªæœ‰å°æ•°ç‚¹ï¼Œå…è®¸æ­¤æ¬¡è¾“å…¥
 					{
 						strNum.push_back((*it));
 					}
@@ -172,9 +172,9 @@ namespace ui {
 			}
 			else if ((*it) == L'-')
 			{
-				if (m_bAllowNegative) //Èç¹ûÔÊĞí¸ºÊı
+				if (m_bAllowNegative) //å¦‚æœå…è®¸è´Ÿæ•°
 				{
-					if (strNum.length() == 0) //Èç¹ûÊÇÊäÈëÄÚÈİµÄÊ×Î»£¬ÔÊĞí
+					if (strNum.length() == 0) //å¦‚æœæ˜¯è¾“å…¥å†…å®¹çš„é¦–ä½ï¼Œå…è®¸
 					{
 						strNum.push_back((*it));
 					}

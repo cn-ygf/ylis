@@ -1,10 +1,10 @@
-﻿// Copyright 2017, NetEase (Hangzhou) Network Co., Ltd. All rights reserved.
+// Copyright 2017, NetEase (Hangzhou) Network Co., Ltd. All rights reserved.
 //
 // zqw
 // 2015/7/22
 //
 // VirtualListBox class
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "VirtualListBox.h"
 
 namespace ui 

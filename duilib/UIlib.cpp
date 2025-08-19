@@ -46,7 +46,7 @@
 //
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "UIlib.h"
 
 

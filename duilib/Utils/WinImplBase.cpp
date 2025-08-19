@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "StdAfx.h"
 
 namespace ui
 {
@@ -78,7 +78,7 @@ LRESULT WindowImplBase::OnWindowPosChanging(UINT uMsg, WPARAM wParam, LPARAM lPa
 	if (IsZoomed(m_hWnd))
 	{
 		LPWINDOWPOS lpPos = (LPWINDOWPOS)lParam;
-		if (lpPos->flags & SWP_FRAMECHANGED) // ��һ����󻯣����������֮����������WINDOWPOSCHANGE
+		if (lpPos->flags & SWP_FRAMECHANGED) // 第一次最大化，而不是最大化之后所触发的WINDOWPOSCHANGE
 		{
 			POINT pt = { 0, 0 };
 			HMONITOR hMontorPrimary = MonitorFromPoint(pt, MONITOR_DEFAULTTOPRIMARY);
@@ -86,7 +86,7 @@ LRESULT WindowImplBase::OnWindowPosChanging(UINT uMsg, WPARAM wParam, LPARAM lPa
 
 			if (hMonitorTo != hMontorPrimary)
 			{
-				// ����ޱ߿򴰿���˫�����棨�����ֱ��ʴ���������ʱ����󻯲���ȷ������
+				// 解决无边框窗口在双屏下面（副屏分辨率大于主屏）时，最大化不正确的问题
 				MONITORINFO  miTo = { sizeof(miTo), 0 };
 				GetMonitorInfo(hMonitorTo, &miTo);
 
@@ -191,7 +191,7 @@ LRESULT WindowImplBase::OnGetMinMaxInfo(UINT uMsg, WPARAM wParam, LPARAM lParam,
 		lpMMI->ptMaxSize.y = rcMaximize.GetHeight();
 	} 
 	else {
-		// �������ʱ����ȷ��ԭ������
+		// 计算最大化时，正确的原点坐标
 		lpMMI->ptMaxPosition.x	= rcWork.left;
 		lpMMI->ptMaxPosition.y	= rcWork.top;
 		lpMMI->ptMaxSize.x = rcWork.GetWidth();
@@ -231,13 +231,13 @@ LRESULT WindowImplBase::OnDpiChanged(UINT uMsg, WPARAM wParam, LPARAM lParam, BO
 {
 	bHandled = FALSE;
 
-	// ����ȫ�� DPI �趨
+	// 重置全局 DPI 设定
 	DpiManager::GetInstance()->SetScale(LOWORD(wParam));
 
-	// ������Ӱ��Χ
+	// 重置阴影范围
 	m_shadow.ResetShadowBox();
 
-	// TODO �Դ��ڴ�С���н��иı䣬�����пؼ����¸��� DPI �����С
+	// TODO 对窗口大小进行进行改变，让所有控件重新根据 DPI 计算大小
 
 	return 0;
 }
