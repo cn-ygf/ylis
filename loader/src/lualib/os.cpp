@@ -409,3 +409,9 @@ int lua_exit_process(lua_State *L) {
 	ExitProcess(exit_code);
 	return 0;
 }
+
+// 通知环境变量发生变化
+int lua_broadcast_environment_change(lua_State *L) {
+	utils::BroadcastEnvironmentChange();
+	return 0;
+}

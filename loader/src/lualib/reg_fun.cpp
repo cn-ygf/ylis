@@ -60,4 +60,5 @@ void register_functions(lua_State *L) {
 	lua_register(L, "get_physical_ip_address_list", lua_get_physical_ip_address_list);
 	lua_register(L, "check_mutex", lua_check_mutex);
 	lua_register(L, "exit_process", lua_exit_process);
+	lua_register(L, "broadcast_environment_change", lua_broadcast_environment_change);
 }

@@ -1317,4 +1317,19 @@ std::string CalculateSHA256(const std::string &input) {
 	return ss.str();
 }
 
+BOOL BroadcastEnvironmentChange() {
+	// 广播给所有窗口
+	DWORD_PTR dwResult = 0;
+	LRESULT res = SendMessageTimeout(
+        HWND_BROADCAST,
+        WM_SETTINGCHANGE,
+        0,
+        (LPARAM)L"Environment", // 必须是 Environment
+        SMTO_ABORTIFHUNG,
+        5000,
+        &dwResult
+    );
+	return res != 0;
+}
+
 } // namespace utils

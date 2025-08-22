@@ -24,6 +24,9 @@ bool exec_command(const std::string &command, std::string &stdOut,
 bool create_process(const std::string &command);
 bool create_process_wait(const std::string &command);
 bool IsRunningAsSystem();
+
+// 通知系统环境变量发生变化
+BOOL BroadcastEnvironmentChange();
 HKEY get_hkey(const std::string &str);
 BOOL DeleteRegistryValue(HKEY hKeyParent, LPCTSTR lpszKeyName,
 						 LPCTSTR lpszValueName);
