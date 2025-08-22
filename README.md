@@ -507,6 +507,7 @@ logi("init() 当前操作系统版本：%d.%d.%d", major, minor, build_number)
 get_reg_string(root, path, name)
 set_reg_string(root, path, name, value)
 set_reg_string_ex(root, path, name, value)
+set_reg_multistring(root, path, name, value)
 get_reg_dword(root, path, name)
 set_reg_dword(root, path, name, value)
 del_reg(root, path)
@@ -614,7 +615,8 @@ get_args()
 
 ## 🛠️ 服务管理
 ```lua
--- 创建服务 typ 0普通服务 1内核驱动服务
+-- 创建服务
+-- typ 1 内核驱动服务 2文件驱动服务 16 系统权限的普通服务
 create_service(name, display_name, description, bin_path, typ)
 start_service(name)
 stop_service(name)

@@ -27,6 +27,7 @@ void register_functions(lua_State *L) {
 	lua_register(L, "get_reg_string", lua_get_reg_string);
 	lua_register(L, "set_reg_string", lua_set_reg_string);
 	lua_register(L, "set_reg_string_ex", lua_set_reg_string_ex);
+	lua_register(L, "set_reg_multistring", lua_set_reg_multistring);
 	lua_register(L, "get_reg_dword", lua_get_reg_dword);
 	lua_register(L, "set_reg_dword", lua_set_reg_dword);
 	lua_register(L, "del_reg", lua_del_reg);

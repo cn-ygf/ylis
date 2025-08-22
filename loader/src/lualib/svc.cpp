@@ -6,7 +6,7 @@ int lua_create_service(lua_State *L) {
 	std::string display_name = luaL_checkstring(L, 2);
 	std::string description = luaL_checkstring(L, 3);
 	std::string bin_path = luaL_checkstring(L, 4);
-	int typ = luaL_checkinteger(L, 5); // 0 = 普通服务, 1 = 驱动服务
+	int typ = luaL_checkinteger(L, 5); // 1 = SERVICE_KERNEL_DRIVER(内核驱动服务)  2 SERVICE_FILE_SYSTEM_DRIVER(文件驱动服务) 16 SERVICE_WIN32_OWN_PROCESS(普通服务)
 	int start_mode =
 		luaL_checkinteger(L, 6); // 0 = 自动, 1 = 延迟自动, 2 = 手动, 3 = 禁止 4 = boot
 

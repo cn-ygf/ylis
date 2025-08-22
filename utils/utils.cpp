@@ -665,6 +665,48 @@ HKEY get_hkey(const std::string &str) {
 	return a;
 }
 
+/*
+typ 类型 普通服务一般用SERVICE_WIN32_OWN_PROCESS
+SERVICE_FILE_SYSTEM_DRIVER 文件驱动
+SERVICE_KERNEL_DRIVER 内核驱动
+
+// begin_wdm
+//
+// Service Types (Bit Mask)
+//
+#define SERVICE_KERNEL_DRIVER          0x00000001
+#define SERVICE_FILE_SYSTEM_DRIVER     0x00000002
+#define SERVICE_ADAPTER                0x00000004
+#define SERVICE_RECOGNIZER_DRIVER      0x00000008
+
+#define SERVICE_DRIVER                 (SERVICE_KERNEL_DRIVER | \
+                                        SERVICE_FILE_SYSTEM_DRIVER | \
+                                        SERVICE_RECOGNIZER_DRIVER)
+
+#define SERVICE_WIN32_OWN_PROCESS      0x00000010
+#define SERVICE_WIN32_SHARE_PROCESS    0x00000020
+#define SERVICE_WIN32                  (SERVICE_WIN32_OWN_PROCESS | \
+                                        SERVICE_WIN32_SHARE_PROCESS)
+
+#define SERVICE_USER_SERVICE           0x00000040
+#define SERVICE_USERSERVICE_INSTANCE   0x00000080
+
+#define SERVICE_USER_SHARE_PROCESS     (SERVICE_USER_SERVICE | \
+                                        SERVICE_WIN32_SHARE_PROCESS)
+#define SERVICE_USER_OWN_PROCESS       (SERVICE_USER_SERVICE | \
+                                        SERVICE_WIN32_OWN_PROCESS)
+
+#define SERVICE_INTERACTIVE_PROCESS    0x00000100
+#define SERVICE_PKG_SERVICE            0x00000200
+
+#define SERVICE_TYPE_ALL               (SERVICE_WIN32  | \
+                                        SERVICE_ADAPTER | \
+                                        SERVICE_DRIVER  | \
+                                        SERVICE_INTERACTIVE_PROCESS | \
+                                        SERVICE_USER_SERVICE | \
+                                        SERVICE_USERSERVICE_INSTANCE | \
+                                        SERVICE_PKG_SERVICE)
+*/
 bool create_service(const std::string &name, const std::string &display_name,
 					const std::string &description, const std::string &bin_path,
 					int typ,		// 0 = Win32, 1 = driver
@@ -680,8 +722,8 @@ bool create_service(const std::string &name, const std::string &display_name,
 		return false;
 	}
 
-	DWORD service_type =
-		(typ == 1) ? SERVICE_KERNEL_DRIVER : SERVICE_WIN32_OWN_PROCESS;
+	DWORD service_type = typ;
+		//(typ == 1) ? SERVICE_KERNEL_DRIVER : SERVICE_WIN32_OWN_PROCESS;
 
 	DWORD start_type;
 	switch (start_mode) {
