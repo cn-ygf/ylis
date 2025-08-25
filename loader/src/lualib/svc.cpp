@@ -18,6 +18,18 @@ int lua_create_service(lua_State *L) {
 	return luaL_error(L, "create_service failed: %s", err.c_str());
 }
 
+int lua_change_service_failure_restart(lua_State *L) {
+	std::string name = luaL_checkstring(L, 1);
+	int delay =
+		luaL_checkinteger(L, 2); // 毫秒
+
+	std::string err;
+	if (utils::change_service_failure_restart(name, delay, err)) {
+		return 0;
+	}
+	return luaL_error(L, "change_service_failure_restart failed: %s", err.c_str());
+}
+
 int lua_change_service_start_mode(lua_State *L) {
 	std::string name = luaL_checkstring(L, 1);
 	int start_mode =

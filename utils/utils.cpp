@@ -783,6 +783,59 @@ bool create_service(const std::string &name, const std::string &display_name,
 	return true;
 }
 
+bool change_service_failure_restart(
+	const std::string &name,
+	int delay,
+	std::string &err) {
+	SC_HANDLE scm = OpenSCManagerW(nullptr, nullptr, SC_MANAGER_CONNECT);
+	if (!scm) {
+		err = "OpenSCManager failed: " + std::to_string(GetLastError());
+		return false;
+	}
+
+	SC_HANDLE svc = OpenServiceW(scm, UTF8ToUTF16(name).c_str(),
+								 SERVICE_ALL_ACCESS);
+	if (!svc) {
+		err = "OpenService failed: " + std::to_string(GetLastError());
+		CloseServiceHandle(scm);
+		return false;
+	}
+
+
+	// 配置失败操作：崩溃时 delay 毫秒后重启服务
+    SC_ACTION actions[1];
+    actions[0].Type = SC_ACTION_RESTART; // 操作：重启服务
+    actions[0].Delay = delay;             // 延迟毫秒
+
+    SERVICE_FAILURE_ACTIONSW sfa;
+    ZeroMemory(&sfa, sizeof(sfa));
+    sfa.dwResetPeriod = 0;               // 不重置失败计数
+    sfa.cActions = 1;                    // 只有一个动作
+    sfa.lpsaActions = actions;           // 动作数组
+	
+
+	// 修改修改崩溃重启参数
+	if (!ChangeServiceConfig2W(svc, SERVICE_CONFIG_FAILURE_ACTIONS, &sfa)) {
+		err = "ChangeServiceConfig2W (SERVICE_CONFIG_FAILURE_ACTIONS) failed: " + std::to_string(GetLastError());
+		CloseServiceHandle(svc);
+		CloseServiceHandle(scm);
+		return false;
+	}
+
+	SERVICE_FAILURE_ACTIONS_FLAG flag;
+    flag.fFailureActionsOnNonCrashFailures = TRUE;
+    if (!ChangeServiceConfig2W(svc, SERVICE_CONFIG_FAILURE_ACTIONS_FLAG, &flag)) {
+        err = "ChangeServiceConfig2W (SERVICE_CONFIG_FAILURE_ACTIONS_FLAG) failed: " + std::to_string(GetLastError());
+        CloseServiceHandle(svc);
+        CloseServiceHandle(scm);
+        return false;
+    }
+
+	CloseServiceHandle(svc);
+	CloseServiceHandle(scm);
+	return true;
+}
+
 bool change_service_start_mode(
 	const std::string &name,
 	int start_mode, // 0 = auto, 1 = delayed auto, 2 = manual, 3 = disabled, 4 =

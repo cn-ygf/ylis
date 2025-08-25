@@ -103,6 +103,8 @@ bool change_service_start_mode(
 	const std::string &name,
 	int start_mode, // 0 = auto, 1 = delayed auto, 2 = manual, 3 = disabled
 	std::string &err);
+bool change_service_failure_restart(const std::string &name, int delay,
+									std::string &err);
 bool start_service(const std::string &name, std::string &err);
 bool stop_service(const std::string &name, std::string &err);
 bool delete_service(const std::string &name, std::string &err);
