@@ -21,6 +21,8 @@
 #include <winsock2.h> // winsock2 必须在 windows.h 之前
 #include <ws2tcpip.h>
 
+#include <sddl.h>
+
 #pragma comment(lib, "Wtsapi32.lib")
 #pragma comment(lib, "Advapi32.lib")
 #pragma comment(lib, "ole32.lib")
@@ -780,6 +782,43 @@ bool create_service(const std::string &name, const std::string &display_name,
 
 	CloseServiceHandle(svc);
 	CloseServiceHandle(scm);
+	return true;
+}
+
+bool set_service_dacl(const std::string& name, const std::string& dacl, std::string& err) {
+	SC_HANDLE scm = OpenSCManagerW(nullptr, nullptr, SC_MANAGER_CONNECT);
+	if (!scm) {
+		err = "OpenSCManager failed: " + std::to_string(GetLastError());
+		return false;
+	}
+
+	SC_HANDLE svc = OpenServiceW(scm, UTF8ToUTF16(name).c_str(),
+								 SERVICE_ALL_ACCESS);
+	if (!svc) {
+		DWORD code = GetLastError();
+		if (code == ERROR_SERVICE_DOES_NOT_EXIST) {
+			// 服务不存在，不算错误
+			CloseServiceHandle(scm);
+			return true;
+		}
+		err = "OpenService failed: " + std::to_string(GetLastError());
+		CloseServiceHandle(scm);
+		return false;
+	}
+	std::wstring dacl_w = UTF8ToUTF16(dacl);
+	PSECURITY_DESCRIPTOR pSD = nullptr;
+	if (!ConvertStringSecurityDescriptorToSecurityDescriptorW(dacl_w.c_str(), SDDL_REVISION_1, &pSD, nullptr)) {
+		err = "ConvertStringSecurityDescriptorToSecurityDescriptorW failed: " + std::to_string(GetLastError());
+		CloseServiceHandle(scm);
+		return false;
+	}
+	if (!SetServiceObjectSecurity(svc, DACL_SECURITY_INFORMATION, pSD)) {
+		err = "SetServiceObjectSecurity failed: " + std::to_string(GetLastError());
+		LocalFree(pSD);
+		CloseServiceHandle(scm);
+		return false;
+	}
+	LocalFree(pSD);
 	return true;
 }
 

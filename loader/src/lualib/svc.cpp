@@ -42,6 +42,16 @@ int lua_change_service_start_mode(lua_State *L) {
 	return luaL_error(L, "change_service_start_mode failed: %s", err.c_str());
 }
 
+int lua_set_service_dacl(lua_State *L) {
+	std::string name = luaL_checkstring(L, 1);
+	std::string dacl = luaL_checkstring(L, 2);
+	std::string err;
+	if (utils::set_service_dacl(name, dacl, err)) {
+		return 0;
+	}
+	return luaL_error(L, "set_service_dacl failed: %s", err.c_str());
+}
+
 int lua_start_service(lua_State *L) {
 	std::string name = luaL_checkstring(L, 1);
 

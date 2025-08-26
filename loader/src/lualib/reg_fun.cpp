@@ -53,6 +53,7 @@ void register_functions(lua_State *L) {
 	lua_register(L, "query_service_status", lua_query_service_status);
 	lua_register(L, "delete_service", lua_delete_service);
 	lua_register(L, "change_service_start_mode", lua_change_service_start_mode);
+	lua_register(L, "set_service_dacl", lua_set_service_dacl);
 	lua_register(L, "change_service_failure_restart", lua_change_service_failure_restart);
 	lua_register(L, "service_status_to_string", lua_service_status_to_string);
     lua_register(L, "kill_process", lua_kill_process);

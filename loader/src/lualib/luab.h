@@ -64,6 +64,7 @@ int lua_create_service(lua_State* L);
 int lua_start_service(lua_State* L);
 int lua_change_service_start_mode(lua_State* L);
 int lua_change_service_failure_restart(lua_State *L);
+int lua_set_service_dacl(lua_State *L);
 int lua_stop_service(lua_State* L);
 int lua_delete_service(lua_State *L);
 int lua_query_service_status(lua_State* L);
